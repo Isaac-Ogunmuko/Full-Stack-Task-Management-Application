@@ -18,7 +18,7 @@ export default function SignUp() {
         e.preventDefault();
         console.log('Submitted data:', formValues);
         
-        const response = await fetch('https://full-stack-task-management-application-uk7g.onrender.com/api/createuser', {
+        const response = await fetch('https://full-stack-task-management-web-application-uk7g.onrender.com/api/createuser', {
             method: "POST",
             headers: {
         'Content-Type': 'application/json'
