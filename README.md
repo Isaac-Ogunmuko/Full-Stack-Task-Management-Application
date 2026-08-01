@@ -4,7 +4,7 @@ A full-stack web application designed to help users efficiently create, organize
 
 ## Technologies Used
 
-* **Frontend:** React, React Router, HTML5, CSS3, Vercel (Hosting)
+* **Frontend:** React, React Router, HTML5, CSS, Vercel (Hosting)
 * **Backend:** Node.js, Express.js, Render (Hosting)
 * **Database:** MongoDB, Mongoose
 * **Version Control:** Git & GitHub
