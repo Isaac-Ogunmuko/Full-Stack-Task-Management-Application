@@ -18,17 +18,17 @@ export default function SignUp() {
         e.preventDefault();
         console.log('Submitted data:', formValues);
         
-        const response=await fetch('https://todo-list-backend-qh1y.onrender.com/api/createuser', {
-            method:"POST",
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify({
-                name:formValues.name,
-                email:formValues.email,
-                password:formValues.password
-            })
-        })
+        const response = await fetch('https://full-stack-task-management-application-uk7g.onrender.com/api/createuser', {
+            method: "POST",
+            headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: formValues.name,
+        email: formValues.email,
+        password: formValues.password
+    })
+});
 
         const ans=await response.json();
         const error=ans.error;
