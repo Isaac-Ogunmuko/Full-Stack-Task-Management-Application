@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
 
 
 app.use(express.json());
-app.use('/api', require("./Routes/creaeUser"));
+app.use('/api', require("./Routes/createUser"));
 app.use('/addTask', require("./Routes/AddTask"));
 app.use('/getTask', require("./Routes/GetTask"));
 app.use('/findTask', require("./Routes/findtask"));
