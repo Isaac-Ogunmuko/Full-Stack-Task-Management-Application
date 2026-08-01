@@ -30,21 +30,20 @@ export default function SignUp() {
     })
 });
 
-        const ans=await response.json();
-        const error=ans.error;
-        if(!ans.success){
-           
-            if(error){
-                alert("Email already exists");
-            }
-            else{
-            alert("Invalid " + ans.errors[0].path);
-            }             
-        }
-        else{
-            navigate('/login');
+       const ans = await response.json();
+    const error = ans.error;
 
-        }
+if (!ans.success) {
+    if (error) {
+        alert("Email already exists");
+    } else if (ans.errors && ans.errors.length > 0) {
+        alert("Invalid " + ans.errors[0].path);
+    } else {
+        alert("Registration failed. Please check your details.");
+    }
+} else {
+    navigate('/login');
+}
 
         setFormValues(initialFormState);
     }
