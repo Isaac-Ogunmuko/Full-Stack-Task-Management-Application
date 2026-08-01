@@ -16,7 +16,7 @@ export default function States({ children }) {
             description:des,
             dueDate:due
         }
-        let response = await fetch('https://todo-list-backend-qh1y.onrender.com/addTask', {
+       let response = await fetch('https://full-stack-task-management-application-uk7g.onrender.com/addTask', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
