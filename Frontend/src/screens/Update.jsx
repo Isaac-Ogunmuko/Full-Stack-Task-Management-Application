@@ -16,7 +16,7 @@ export default function Update() {
 
   const data = async () => {
     try {
-      let response = await fetch('https://todo-list-backend-qh1y.onrender.com/findTask', {
+      let response = await fetch('https://full-stack-task-management-application-uk7g.onrender.com/findTask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
