@@ -14,37 +14,38 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://full-stack-task-management-application-uk7g.onrender.com/api/loginuser', {
+
+    try {
+      const response = await fetch('https://full-stack-task-management-application-uk7g.onrender.com/api/loginuser', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            email: formValues.email,
-            password: formValues.password
+          email: formValues.email,
+          password: formValues.password
         })
-    });
-    
-    const json = await response.json();
-    console.log(json);
-};
+      });
 
-    const ans=await response.json();
-    if(!ans.success){
+      const ans = await response.json();
+      console.log('Login response:', ans);
+
+      if (!ans.success) {
         alert("Invalid id or password");
-    }
+      } else {
+        alert("Login Successfully");
+        localStorage.setItem("userEmail", formValues.email);
+        localStorage.setItem("authToken", ans.authToken);
+        console.log("Auth Token:", localStorage.getItem("authToken"));
+        navigate('/');
+      }
 
-    else {
-      
-      alert("Login Successfully");
-      localStorage.setItem("userEmail",formValues.email);
-      localStorage.setItem("authToken",ans.authToken);
-      console.log(localStorage.getItem("authToken"))
-      navigate('/');
+      setFormValues(initialFormState);
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Could not connect to the backend server.");
     }
-
-     setFormValues(initialFormState);
-  }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
