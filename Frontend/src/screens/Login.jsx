@@ -14,16 +14,20 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response =await fetch('https://todo-list-backend-qh1y.onrender.com/api/loginuser',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body:JSON.stringify({
-        email:formValues.email,
-        password:formValues.password
-      })
-    }) 
+    const response = await fetch('https://full-stack-task-management-application-uk7g.onrender.com/api/loginuser', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: formValues.email,
+            password: formValues.password
+        })
+    });
+    
+    const json = await response.json();
+    console.log(json);
+};
 
     const ans=await response.json();
     if(!ans.success){
