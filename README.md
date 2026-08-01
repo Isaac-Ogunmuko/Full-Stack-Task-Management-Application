@@ -1,4 +1,4 @@
-# Full-Stack Task Management Application
+# Full-Stack Task Management Web Application
 
 A full-stack web application designed to help users efficiently create, organize, and manage their daily tasks with secure authentication and real-time database tracking.
 
